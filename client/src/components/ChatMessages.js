@@ -5,8 +5,8 @@ const ChatMessages = ({ messages }) => {
   return (
     <div className="chat-messages">
       {messages.map((msg, index) => (
-        <div key={index} className="message-bubble">
-          {msg}
+        <div key={index} className={`message-bubble ${msg.type === 'user' ? 'user-message' : 'bot-message'}`}>
+          {msg.text}
         </div>
       ))}
     </div>

@@ -17,6 +17,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
 }
 
 .chatbot-container {
@@ -40,14 +41,28 @@ body {
   max-height: 300px;
   overflow-y: auto;
   margin-bottom: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .message-bubble {
   background-color: #f0f0f0;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 15px;
   margin-bottom: 10px;
   word-wrap: break-word;
+  max-width: 70%;
+}
+
+.user-message {
+  background-color: #8f7d7d;
+  color: white;
+  align-self: flex-end;
+}
+
+.bot-message {
+  align-self: flex-start;
 }
 
 .chat-input {
@@ -60,7 +75,7 @@ body {
   flex: 1;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 20px;
   margin-right: 10px;
 }
 
@@ -74,7 +89,7 @@ body {
   background-color: #8f7d7d;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }

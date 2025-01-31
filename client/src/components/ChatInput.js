@@ -5,24 +5,10 @@ import axios from 'axios';
 const ChatInput = ({ onSendMessage }) => {
   const [message, setMessage] = useState('');
 
-  const handleSendMessage = async () => {
-    if (message.trim() === '') return;
-
-    try {
-      const res = await axios.post('http://localhost:8000/api/chat', {
-        message: message,
-      });
-
-      if (res.data.reply) {
-        onSendMessage(res.data.reply);
-      } else {
-        onSendMessage('Réponse inattendue du serveur');
-      }
-
+  const handleSendMessage = () => {
+    if (message.trim() !== '') {
+      onSendMessage(message);
       setMessage('');
-    } catch (error) {
-      console.error("Erreur lors de l'envoi du message:", error);
-      onSendMessage('Erreur lors de l\'envoi du message');
     }
   };
 
